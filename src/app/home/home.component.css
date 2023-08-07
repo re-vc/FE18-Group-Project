@@ -1,0 +1,192 @@
+.anon-img-height {
+    height: 400px;
+}
+
+.bg-c-primary {
+    background-color: #E7E5DF;
+}
+
+.logo {
+    background-color: #44bba4;
+    position: relative;
+    padding: 0 1rem;
+    margin: 0 1rem;
+}
+
+.logo-text {
+    font-family: serif;
+}
+
+.c-gap {
+    gap: 2rem;
+}
+
+.c-profile {
+    height: 100%;
+}
+
+.parallax {
+    background-image: url('https://cdn.pixabay.com/photo/2018/03/10/12/00/teamwork-3213924_960_720.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 15vh;
+    position: relative;
+}
+
+.h1 {
+    position: relative;
+    z-index: 1;
+}
+
+.h3-c {
+    position: relative;
+    z-index: 1;
+}
+
+.c-hero {
+    height: 15vh;
+    overflow: hidden;
+}
+
+.bg-c {
+    background-color: #44bba4;
+    position: relative;
+}
+
+.h2-c {
+    color: black;
+    font-size: 5rem;
+    font-family: Serif;
+    user-select: none;
+}
+
+.btn-c-pri {
+    border-color: #44bba4;
+    color: #44bba4;
+}
+
+.btn-c-pri:hover {
+    background-color: #44bba4;
+    color: black;
+}
+
+.btn-c-sec {
+    border-color: #e7bb41;
+    background-color: #e7bb41;
+    color: black;
+}
+
+.btn-c-sec:hover {
+    border-color: #ffca2c;
+    background-color: #ffca2c;
+    color: black;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    width: 8%;
+}
+
+.carousel-c-height {
+    height: 42.5vh;
+}
+
+.teamrole {
+    font-family: serif;
+    font-size: .9rem;
+    letter-spacing: .05rem;
+    padding-top: 0;
+    margin-top: -.5rem;
+}
+
+.overlay {
+    background-color: #d3d0cb;
+    opacity: 33.333%;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    pointer-events: none;
+    border-top-right-radius: .3rem;
+    border-bottom-right-radius: .3rem;
+}
+
+.h1-overlay {
+    background-color: black;
+    opacity: 33.333%;
+    position: absolute;
+    z-index: 0;
+    top: 25%;
+    height: 50%;
+    width: 100%;
+    pointer-events: none;
+}
+
+@media (max-height: 1000px) {
+    .h1-overlay {
+        top: 0;
+        height: 100%;
+    }
+}
+
+.h2-overlay {
+    background-color: black;
+    opacity: 33.333%;
+    position: absolute;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+}
+
+img {
+    /* max-width: 100%; */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-img1 {
+    height: 400px;
+}
+
+.c-profile {
+    height: 100%;
+    width: auto;
+}
+
+.p-w-50 {
+    width: 50%;
+}
+
+.carousel-career-height {
+    height: 80vh;
+}
+
+.carousel-career-heading {
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.ccn-inverted,
+.ccp-inverted {
+    filter: invert(100%);
+}
+
+/* carousel content breaks on devices with screens smaller than 300px. fix: add another @media */
+@media (max-width: 992px) {
+    .c-profile {
+        height: 66%;
+        width: 50%;
+    }
+
+    .p-w-50 {
+        width: 100%;
+    }
+}

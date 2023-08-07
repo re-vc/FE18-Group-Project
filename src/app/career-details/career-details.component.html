@@ -1,0 +1,32 @@
+<div style="background-color: #E7E5DF;">
+    <div class="top">
+        <a routerLink="/career" class="btn btn-warning m-2 shadow">Back to Careers</a>
+    </div>
+    <div style="background-color:#E7E5DF;">
+        <div class="container">
+            <h1 style="text-align: center; margin-top: 30px;">Jobs details</h1>
+            <div class="row mb-2">
+                <div class="col-lg-12 col-md-12  col-sm-12 col-xs-12" style="background-color: #E7E5DF;">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow h-md-250 postion-relativ" style="background-color: white; margin-left: 50px;">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-success">Share your CV with us</strong>
+                            <h3 class="mb-0">{{job.name}}</h3>
+                            <div class="mb-1 text-muted">Feb 17</div>
+                            <p class="card-text mb-auto">Our Office: {{job.place}}</p>
+                            <p class="card-text mb-auto">Job status: {{job.status}}</p>
+                            <p class="card-text mb-auto">Weakly hours: {{job.time}}</p>
+
+                            <a href="https://www.wu-alumni.at/de/unterstuetzung/wu-alumni-engagement/" class="btn btn-success my-3 ">Add CV + </a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <img src="{{job.image}}" class="bd-placholder-img" width="200" height="290" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,92 @@
+.event_button{
+    margin: 1vh;
+}
+
+.event_body{
+    display: flex;
+    justify-content: center;
+
+}
+
+.event_whole_container{
+    background-color: var(--primary);
+    min-height: 100vh;
+}
+
+.event_container{
+    margin: 4vh;
+    max-width: 1200px;
+    background-color: white;
+
+    -webkit-box-shadow: 0px 4px 17px 0px rgba(0,0,0,0.4); 
+    box-shadow: 0px 4px 17px 0px rgba(0,0,0,0.4);
+    border-radius: 5px;
+
+}
+
+.cardcontainer {
+    display: flex;
+}
+
+@media screen and (max-width: 790px){
+    .cardcontainer{
+        display: block;
+        
+    }
+}
+
+.additional{
+    margin: 10px;
+
+}
+
+.additional_info{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.picture{
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    max-width: 400px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.event_name{
+    font-weight: bold;
+}
+
+.event_date{
+    font-weight: bold;
+}
+.event_button{
+
+}
+
+
+/* Hero */
+.hero_image{
+    background-image: url(https://cdn.pixabay.com/photo/2016/08/16/09/53/international-conference-1597531_960_720.jpg);
+    min-height: 15vh;
+    position: relative;
+    background-size: cover;
+}
+
+.herotopic{
+    background-color: gray;
+    color: white;
+    opacity: 0.8;
+    padding: 1vh;
+    border-radius: 20px;
+    font-size: 40px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

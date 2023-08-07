@@ -1,0 +1,111 @@
+.directory {
+    background-color: var(--primary);
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary);
+}
+
+#top {
+    padding-top: 1rem;
+}
+
+.hero_image{
+    background-image: url(https://cdn.pixabay.com/photo/2017/08/01/01/28/people-2562626_960_720.jpg);
+    min-height: 15vh;
+    position: relative;
+    background-size: contain;
+}
+
+.herotopic{
+    background-color: gray;
+    color: white;
+    opacity: 0.8;
+    padding: 1vh;
+    border-radius: 20px;
+    font-size: 40px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+i {
+    margin: 5px;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+
+}
+
+.controls{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.sortButton{
+    background-color: var(--highlight2);
+    border: none;
+    color: var(--primary);
+    margin: 5px;
+}
+
+.sortDirectionButton{
+    color: #E7BB41;
+}
+
+.imgCon {
+    border-radius: 5px;
+    max-height: 95%;
+    width: 95%;
+    aspect-ratio: 1;
+    background-image: url("src/assets/images/blank-profile.png");
+    background-size: cover;
+    overflow: hidden;
+}
+
+i {
+    cursor: pointer;
+}
+
+img {
+    max-width: 200%;
+    min-height: auto;
+    position: relative;
+    left: 50%;
+    top: 40%;
+    -webkit-transform: translateY(-40%) translateX(-50%);
+    transform: translateY(-40%) translateX(-50%);
+}
+
+.card {
+    padding: 2px;
+    align-items: center;
+    margin: 1rem;
+    background-color: white;
+    border: hidden;
+    color: var(--highlight1);
+    font-size: large;
+    
+}
+
+.border1{
+    border: 2px inset var(--highlight1);
+}
+
+.card:hover {
+    background-color: var(--primary);
+
+}
+
+#cards {
+    margin: 1rem;
+    justify-content: center;
+}
+
+.col {
+    padding: 0.1rem;
+}

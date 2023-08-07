@@ -1,0 +1,88 @@
+<div class="career">
+
+    <!--hero in career section-->
+
+    <div class="hero-image">
+        <div class="hero-text">
+            <br>
+            <h1 style="color: #E7E5DF;">We are Hiring</h1>
+
+
+
+            <p style="color: #E7E5DF;">Fill free and send your application</p>
+
+        </div>
+    </div>
+
+
+
+
+    <!--Jobs in carerr section-->
+    <div class="container ">
+        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-xs-1 ">
+            <div *ngFor="let val of jobs; index as id">
+                <div class="card shadow my-3 " style="width: 20rem;">
+                    <img src="{{ val.image }}" class="card-img-top" style="height: 250px;" alt="Fronte-End">
+                    <div class="card-body">
+                        <h5 class="card-title"> {{ val.name }} </h5>
+                        <p class="card-text" style="height: 160px"> {{ val.description }}</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><i class="fa fa-clock-o" style="font-size:25px"></i> {{val.time}}</li>
+                        <li class="list-group-item"><i class="fas fa-home" style="font-size:25px"></i> {{val.place}}</li>
+                        <li class="list-group-item"><i class="fa fa-briefcase" style="font-size:25px"></i>{{val.status}}</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="#" class="card-link btn btn-warning" routerLink="/career-details/{{ id }}">More Details</a>
+                        <a href="https://codefactory.wien/en/home-en/" class="card-link btn btn-success">Apply on site</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <!--End of Jobs-->
+    <!--Begin of the companies -->
+    <div class="row mb-2">
+        <h1 class="fst-italic" style="text-align: center; margin-bottom: 60px; margin-top: 60px;">Companies that are interested in employing alumnis</h1>
+        <div class="col-lg-6 col-md-6 ">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow h-md-250 postion-relativ" style="background-color: white; margin-left: 50px;">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-primary">We were alumnis too.</strong>
+                    <h3 class="mb-0">AFR GmbH</h3>
+                    <div class="mb-1 text-muted">Feb 17</div>
+                    <p class="card-text mb-auto"> Die AFR ist sehr gut und will exzellent sein – dafür werden wir fortan stärker mit Ihnen in Kontakt treten, Ihnen freundlich nähertreten und Ihnen die "Welt der AFR" (wieder) näherbringen.</p>
+                    <a href="https://www.wu-alumni.at/de/unterstuetzung/wu-alumni-engagement/" class="btn btn-info my-3 ">Our site</a>
+                </div>
+                <div class="col-auto d-none d-lg-block">
+                    <img src="/assets/pictures for carrer section/social.jpg" class="bd-placholder-img" width="200" height="290" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-6">
+
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow h-md-250 postion-relativ" style="background-color: white; margin-left: 20px; margin-right: 20px;">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-primary">Alumnis are welcome </strong>
+                    <h3 class="mb-0">Alumnis GmbH</h3>
+                    <div class="mb-1 text-muted">Feb 28</div>
+                    <p class="card-text mb-auto">Die Alumnis braucht ihre Alumni. Ihre Erfahrung, Ihre Zeit und Ihre fördernde Unterstützung werden sehr geschätzt. Denn eine Universität ist so gut wie die Menschen, die sie prägen, die von ihr geprägt wurden und geprägt werden.</p>
+                    <a href="https://www.wu-alumni.at/de/unterstuetzung/wu-alumni-engagement/" class="btn btn-info my-3 ">Our site</a>
+                </div>
+                <div class="col-auto d-none d-lg-block">
+                    <img src="/assets/pictures for carrer section/social2.jpg" class="bd-placholder-img" width="200" height="290" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--End of the companies -->

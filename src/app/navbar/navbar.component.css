@@ -1,0 +1,35 @@
+.bg-body-custom {
+    background-color: #d3d0cb;
+}
+
+/* makes the text not selectable. applies to the logo as well. */
+.navbar {
+    user-select: none;
+}
+
+.no-border {
+    border: none;
+}
+
+.logo {
+    background-color: #44bba4;
+    position: relative;
+    padding: 0 1rem;
+}
+
+.logo-text {
+    font-family: serif;   
+}
+
+.overlay {
+    background-color: #d3d0cb;
+    opacity: 33.333%;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    border-top-right-radius: .3rem;
+    border-bottom-right-radius: .3rem;
+}

@@ -1,0 +1,32 @@
+<div class="event_whole_container">
+    <div class="hero_image">
+        <span class="herotopic">Events</span>
+    </div>
+
+    <div class="event_body">
+        <div class="event_body_holder">
+            <div class="event_container" *ngFor="let val of events; index as i">
+                <div class="event_card">
+                    <div class="cardcontainer">
+                        <div class="image">
+                            <img class="picture" src="{{val.picture}}" alt="{{val.name}}">
+                        </div>
+                        <div class="card_content">
+                            <div class="event_name">{{val.name}}</div>
+                            <p class="event_discription">{{val.discription}}</p>
+                        </div>
+                        <div class="additional">
+                            <div class="additional_info" *ngIf="val.avaibility == true; else notavaible">
+                                <div class="event_date"></div>
+                                <a type="button" class="btn btn-success event_button" routerLink="/event-detail/{{i}}">Info</a>
+
+                            </div>
+                            <ng-template #notavaible><p style="font-weight: bold;">More infos coming soon!</p>
+                            </ng-template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

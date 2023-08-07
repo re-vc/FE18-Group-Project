@@ -1,0 +1,35 @@
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+<div class="directory">
+    <div class="hero_image">
+        <span class="herotopic">Previous Alumnis</span>
+    </div>
+    <div id="top"></div>
+    <div class="container">
+        <div class="controls">
+            <input type="button" class="sortButton" value="Sort by ID" (click)="sortByID()">
+            <input type="button" class="sortButton" value="Sort by Name" (click)="sortByName()">
+            <span class="sortDirectionButton" (click)="reverseSelection()" *ngIf="isReverse, else standard">
+                <i style='font-size:24px' class='fas'>&#xf102;</i>
+            </span>
+            <ng-template #standard>
+                <span class="sortDirectionButton" (click)="reverseSelection()">
+                    <i style='font-size:24px' class='fas'>&#xf103;</i>
+                </span>
+            </ng-template>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4" id="cards">
+            <div *ngFor="let alumni of alumniList">
+                <div class="col">
+                    <a class="card shadow-lg" routerLink="{{alumni.id}}">
+                        <div class="imgCon">
+                            <img src="{{alumni.imageSrc}}" alt="">
+                        </div>
+                        <p>{{alumni.name}}</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

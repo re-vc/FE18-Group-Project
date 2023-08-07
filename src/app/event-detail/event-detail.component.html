@@ -1,0 +1,29 @@
+<div class="detail_event_corpus">
+    <div class="hero_image">
+        <span class="herotopic">Events</span>
+    </div>
+    <div class="top">
+        <a routerLink="/events">Back to Events</a>
+    </div>
+    <div class="event_detail_container">
+        <div class="event_whole_container">
+
+            <div class="event_detail" *ngIf="events">
+                <div class="event_detail_card">
+                    <div class="card mb-3">
+                        <img src="{{events.picture}}" class="card-img-top" alt="{{events.name}}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{events.name}}</h5>
+                            <p class="card-text">{{events.discription}}</p>
+                            <p class="card-text">Location:
+                                <span style="font-weight: bold;">{{events.place}}</span>
+                            </p>
+                            <p class="card-text">Start:
+                                <span style="font-weight: bold;">{{events.date}}</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

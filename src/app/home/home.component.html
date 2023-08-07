@@ -1,0 +1,208 @@
+<!-- hi, this is my part for this group project. -->
+<!-- my goal was to create a simple, minimal and responsive homepage. -->
+
+<!-- 27.02. - 28.02.2023 retroactive -->
+<!-- when creating cards you need a wrapper-div in between div.row and div.class -->
+<!-- carousel needs different id's (of course) but no need for TypeScript and other shenanigans -->
+
+<!-- 01.03.2023 -->
+<!-- note: the way i create the "active" in a carousel can surely be done better. -->
+<!-- but my concern right now is to get everything done and optimize later. -->
+
+<!-- 02.03.2023 -->
+<!-- update: i did the optimization now the solution was simple - use [class.x]="boolean" -->
+<!-- which effectively does what i wanted to do. Add .active to the first slide only. -->
+
+<!-- here starts the homeComponent and HeroBanner -->
+
+<div class="bg-c-primary">
+    <div class="container-fluid c-hero">
+        <div class="parallax">
+            <div class="h1-overlay"></div>
+            <h1 class="d-flex align-items-center justify-content-center text-white h1 h-100">
+                made by
+                <div class="logo rounded">
+                    <div class="overlay"></div>
+                    <span class="logo-text">&#923;lumni</span>
+                </div>
+                for Alumni
+            </h1>
+        </div>
+    </div>
+
+    <app-divider></app-divider>
+
+    <!-- collaborator cards -->
+
+    <div class="container-fluid">
+        <div class="row row-cols-lg-5 row-cols-md-1 gx-2 gy-2">
+            <div *ngFor="let collaborator of collaborators, index as i">
+                <div class="card">
+                    <div class="card-img1" *ngIf="collaborator.imageSRC != 'none', else lastNameInitials">
+                        <img src="{{ collaborator.imageSRC }}" class="card-img-top image-fluid"
+                            alt="picture of {{ collaborator.name }}" style="user-select: none; pointer-events: none;">
+                    </div>
+                    <ng-template #lastNameInitials>
+                        <div
+                            class="bg-c rounded-top anon-img-height w-100 d-flex justify-content-center align-items-center">
+                            <div class="overlay"></div>
+                            <h2 class="h2-c text-center">{{ formatInitial(collaborator.name) }}</h2>
+                        </div>
+                    </ng-template>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ collaborator.name }}</h5>
+                        <div *ngIf="collaborator.leader, else team">
+                            <p class="teamrole">Team Leader</p>
+                        </div>
+                        <ng-template #team>
+                            <p class="teamrole">‌</p>
+                        </ng-template>
+                        <p class="card-text">worked on {{ collaborator.workingOn }}</p>
+                        <hr>
+                        <a class="btn btn-outline-primary btn-c-pri w-100 text-decoration-none"
+                            href="{{ collaborator.git }}" target="_blank">{{ formatGit(collaborator.git) }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <app-divider></app-divider>
+
+    <!-- start carousel 1 -->
+
+    <div class="container-fluid">
+        <div id="carouselExample00" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item" *ngFor="let val of events, index as i" [class.active]="i==0">
+                    <div class="bg-c carousel-c-height d-flex justify-content-center align-items-center">
+                        <div class="h-100 w-75 d-flex flex-column justify-content-center align-items-center">
+                            <h2>{{val.name}}</h2>
+                            <p>{{val.discription}}</p>
+                            <div class="w-100 d-flex justify-content-center"
+                                *ngIf="val.avaibility == true; else notavaible">
+                                <a routerLink="/event-detail/{{i}}"
+                                    class="btn btn-outline-secondary btn-c-sec text-decoration-none w-50">read
+                                    more</a>
+                            </div>
+                            <ng-template #notavaible>
+                                <p style="font-weight: bold;">More infos comming soon!</p>
+                            </ng-template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample00"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample00"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- hero as divider -->
+
+    <div class="container-fluid c-hero">
+        <div class="parallax">
+            <div class="h2-overlay"></div>
+            <div class="d-flex align-items-center justify-content-center text-white h3-c  h-100">
+                <figure style="margin: 0;">
+                    <blockquote class="blockquote">
+                        <p>❝ Teamwork makes the dream work ❞</p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer text-white" style="margin-bottom: 0;">
+                        clergyman <cite title="Source Title">John C. Maxwell</cite>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+
+    <!-- start carousel 2 -->
+
+    <div class="container-fluid">
+        <div id="carouselExample01" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item" *ngFor="let val of stories, index as i" [class.active]="i==0">
+                    <div class="bg-c carousel-c-height d-flex justify-content-start align-items-center c-gap">
+                        <img src="{{val.image}}" alt="picture of {{val.header}}" class="c-profile">
+                        <div class="h-100 w-50 d-flex flex-column justify-content-center align-items-start">
+                            <h2>{{val.header}}</h2>
+                            <p class="p-w-50">{{val.description}}</p>
+                            <a routerLink="stories"
+                                class="btn btn-outline-secondary btn-c-sec text-decoration-none w-50">read
+                                more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample01"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample01"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- start carousel 3 -->
+
+    <div class="container-fluid">
+        <h2 class="text-center h2 display-5 carousel-career-heading">Find your dream job with us today!</h2>
+        <div id="carouselExample02" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item" *ngFor="let val of jobs, index as i" [class.active]="i==0">
+                    <div class="d-flex carousel-career-height justify-content-center align-items-center">
+                        <div class="card shadow my-3 " style="width: 20rem;">
+                            <img src="{{ val.image }}" class="card-img-top" style="height: 250px;" alt="Fronte-End">
+                            <div class="card-body">
+                                <h5 class="card-title"> {{ val.name }} </h5>
+                                <p class="card-text" style="height: 160px"> {{ val.description }}</p>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><i class="fa fa-clock-o" style="font-size:25px"></i>
+                                    {{val.time}}</li>
+                                <li class="list-group-item"><i class="fas fa-home" style="font-size:25px"></i>
+                                    {{val.place}}</li>
+                                <li class="list-group-item"><i class="fa fa-briefcase"
+                                        style="font-size:25px"></i>{{val.status}}</li>
+                            </ul>
+                            <div class="card-body">
+                                <a href="#" class="card-link btn btn-warning" routerLink="/career-details/{{ i }}">More
+                                    Details</a>
+                                <a href="https://codefactory.wien/en/home-en/" class="card-link btn btn-success">Apply
+                                    on site</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev ccp-inverted" type="button" data-bs-target="#carouselExample02"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next ccn-inverted" type="button" data-bs-target="#carouselExample02"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- makes a carousel controllable once a prev/next button has been clicked before -->
+<script>
+    $(".carousel").carousel({
+        keyboard: true
+    });
+</script>

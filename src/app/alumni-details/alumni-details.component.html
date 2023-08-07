@@ -1,0 +1,33 @@
+<div class="top">
+    <a routerLink="/directory">Back to Directory</a>
+</div>
+
+<div class="container">
+    
+    <div class="row">
+        <div class="col-sm-5 imageCon">
+            <img src="{{alumni.imageSrc}}" alt="">
+        </div>
+        <div class="col-sm-7">
+            <div class="row">
+                <div class="col">
+                    <h1>{{alumni.name}}</h1>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col">
+                    <h5>Achievements at CodeFactory:</h5> 
+                    <p>{{alumni.achievements}}</p>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col">
+                    <h5>Career:</h5>
+                    <p>{{alumni.career}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
